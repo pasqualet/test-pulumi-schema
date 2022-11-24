@@ -35,7 +35,7 @@ export class Cluster extends pulumi.ComponentResource {
     /**
      * Node group
      */
-    public /*out*/ readonly bucket!: pulumi.Output<storage.Bucket | undefined>;
+    public /*out*/ readonly bucket!: pulumi.Output<Bucket | undefined>;
     /**
      * Kubeconfig
      */
@@ -43,7 +43,7 @@ export class Cluster extends pulumi.ComponentResource {
     /**
      * Node group
      */
-    public /*out*/ readonly nodegroup!: pulumi.Output<kubernetes.NodeGroup | undefined>;
+    public /*out*/ readonly nodegroup!: pulumi.Output<NodeGroup | undefined>;
     /**
      * Password
      */

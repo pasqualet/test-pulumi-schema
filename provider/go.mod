@@ -2,6 +2,8 @@ module github.com/pasqualet/test-pulumi-schema/cmd
 
 go 1.18
 
+replace github.com/pulumi/pulumi/pkg/v3 v3.47.2 => github.com/pasqualet/pulumi/pkg/v3 v3.0.0-20221124150712-b49867885114
+
 require (
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-yaml/yaml v2.1.0+incompatible
@@ -127,7 +129,7 @@ require (
 	github.com/pkg/browser v0.0.0-20210115035449-ce105d075bb4 // indirect
 	github.com/pkg/term v1.1.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/pulumi/pulumi/sdk/v3 v3.47.2 // indirect
+	github.com/pulumi/pulumi/sdk/v3 v3.48.0 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/rogpeppe/go-internal v1.8.1 // indirect
 	github.com/ryanuber/go-glob v1.0.0 // indirect
