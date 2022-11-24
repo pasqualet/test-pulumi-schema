@@ -1,0 +1,54 @@
+name: test-pulumi-schema
+keywords:
+- pulumi
+- aws
+- eks
+license: Apache-2.0
+repository: https://github.com/pasqualet/test-pulumi-schema
+language:
+  nodejs:
+    respectSchemaVersion: true
+    pluginName: test-pulumi-schema
+    dependencies:
+      "@pulumi/aws": ^5.10.0
+resources:
+  test-pulumi-schema:kubernetes:Cluster:
+    description: Kubernetes cluster production ready.
+    properties:
+      awsBucket:
+        $ref: '/aws/v5.10.0/schema.json#/resources/aws:s3%2fbucketV2:BucketV2'
+        description: Node group
+      bucket:
+        $ref: '#/resources/test-pulumi-schema:storage:Bucket'
+        description: Node group
+      kubeconfig:
+        type: string
+        description: Kubeconfig
+      nodegroup:
+        $ref: '#/resources/test-pulumi-schema:kubernetes:NodeGroup'
+        description: Node group
+      password:
+        $ref: '#/resources/test-pulumi-schema:index:Password'
+        description: Password
+    isComponent: true
+  test-pulumi-schema:kubernetes:NodeGroup:
+    description: Kubernetes cluster production ready.
+    properties:
+      name:
+        type: string
+        description: Kubeconfig
+    isComponent: true
+  test-pulumi-schema:storage:Bucket:
+    description: S3 Bucket.
+    properties:
+      name:
+        type: string
+        description: Bucket name
+    isComponent: true
+  test-pulumi-schema:index:Password:
+    description: A random generated password.
+    properties:
+      length:
+        type: number
+        description: The lenght of the generated password.
+    isComponent: true
